@@ -1,10 +1,10 @@
 import React from "react";
 
-class MyComponent extends React.Component {
+class MyComponent2 extends React.Component {
 
     state = {
-        names: 'Don',
-        dates: '24/05/1999'
+        names: 'Dang',
+        dates: '24/05/2000'
     }
 
     /**
@@ -44,4 +44,4 @@ class MyComponent extends React.Component {
     }
 }
 
-export default MyComponent;
+export default MyComponent2;

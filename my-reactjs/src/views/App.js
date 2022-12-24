@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './Example/MyComponent';
+import MyComponent2 from './Example/MyComponent2';
 
 const App = () => {
   return (
@@ -20,8 +21,11 @@ const App = () => {
         </a>
 
         <MyComponent />
-
+        <MyComponent2 />
       </header>
+      <footer>
+        <img src={logo} alt="logo"></img>
+      </footer>
     </div>
   );
 }
