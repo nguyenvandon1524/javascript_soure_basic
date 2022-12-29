@@ -1,9 +1,10 @@
 import React from "react";
 
+
 class MyComponent extends React.Component {
 
     state = {
-        names: 'Don',
+        names: '',
         dates: '24/05/1999'
     }
 
@@ -11,6 +12,7 @@ class MyComponent extends React.Component {
      * Handle input character dispear in screen
      */
     handleOnChangeName = (event) => {
+        // setState call value now
         this.setState({
             names: event.target.value
         })

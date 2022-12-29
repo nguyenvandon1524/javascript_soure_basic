@@ -1,45 +1,38 @@
 import React from "react";
+import ChildComponent from "./ChildComponent";
+import AddComponent from "./AddComponent";
 
 class MyComponent2 extends React.Component {
 
+
     state = {
-        names: 'Dang',
-        dates: '24/05/2000'
+        arrJobs: [
+            { id: 'job1', title: 'Developer', salary: '1500' },
+            { id: 'job2', title: 'Web Design', salary: '1000' },
+            { id: 'job3', title: 'Tester', salary: '500' }
+        ]
     }
 
-    /**
-     * Handle input character dispear in screen
-     */
-    handleOnChangeName = (event) => {
+    addNewJob = (job) => {
         this.setState({
-            names: event.target.value
+            arrJobs: [...this.state.arrJobs, job]
         })
-    }
-
-    handleClickButton = () => {
-        alert('Click Successfully!')
+        console.log('>>> check function from parent: ', job)
     }
 
     render() {
         return (
-            <React.Fragment>
-                <div className="fr">
-                    <input value={this.state.names}
-                        type="text"
-                        onChange={(event) => this.handleOnChangeName(event)}>
-                    </input>
-                    <br></br>
-                    My name is {this.state.names}
-                </div>
-                <div className="sec">
-                    I am {this.state.dates}
-                </div>
-                <div className="thir">
-                    <button onClick={() => { this.handleClickButton() }}>
-                        Click me
-                    </button>
-                </div>
-            </React.Fragment>
+            <>
+                <AddComponent
+                    addNewJob={this.addNewJob}
+                />
+
+
+                <ChildComponent
+                    arrJobs={this.state.arrJobs}
+                />
+
+            </>
         )
     }
 }
